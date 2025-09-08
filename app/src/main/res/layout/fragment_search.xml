@@ -16,6 +16,7 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/tv_search_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Search"
@@ -40,6 +41,7 @@
 
     <!-- Search Bar -->
     <androidx.cardview.widget.CardView
+        android:id="@+id/card_search_bar"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginTop="16dp"
@@ -55,13 +57,14 @@
             android:paddingHorizontal="16dp">
 
             <ImageView
+                android:id="@+id/iv_search_icon"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_search"
                 app:tint="@color/text_secondary" />
 
             <androidx.appcompat.widget.SearchView
-                android:id="@+id/search_view"
+                android:id="@+id/sv_search"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="8dp"
@@ -80,12 +83,11 @@
                 app:tint="@color/text_secondary" />
 
         </LinearLayout>
-
     </androidx.cardview.widget.CardView>
 
-    <!-- Search Categories (when search is empty) -->
+    <!-- Browse Categories -->
     <LinearLayout
-        android:id="@+id/search_categories_section"
+        android:id="@+id/section_browse_categories"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -93,6 +95,7 @@
         android:visibility="visible">
 
         <TextView
+            android:id="@+id/tv_browse_all"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Browse all"
@@ -100,9 +103,8 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <!-- Genre Grid -->
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/genres_grid"
+            android:id="@+id/rv_genres"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -112,7 +114,7 @@
 
     <!-- Recent Searches -->
     <LinearLayout
-        android:id="@+id/recent_searches_section"
+        android:id="@+id/section_recent_searches"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -126,6 +128,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/tv_recent_searches"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -142,29 +145,26 @@
                 android:text="Clear all"
                 android:textColor="@color/text_secondary"
                 android:textSize="12sp" />
-
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recent_searches_recycler"
+            android:id="@+id/rv_recent_searches"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:nestedScrollingEnabled="false" />
-
     </LinearLayout>
 
-    <!-- Search Results Section -->
+    <!-- Search Results -->
     <LinearLayout
-        android:id="@+id/search_results_section"
+        android:id="@+id/section_search_results"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
         android:layout_weight="1"
+        android:layout_marginTop="16dp"
         android:orientation="vertical"
         android:visibility="gone">
 
-        <!-- Search Results Header -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -172,7 +172,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/search_results_title"
+                android:id="@+id/tv_search_results_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -182,18 +182,16 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/results_count"
+                android:id="@+id/tv_results_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="24 results"
                 android:textColor="@color/text_secondary"
                 android:textSize="12sp" />
-
         </LinearLayout>
 
-        <!-- Search Filter Tabs -->
         <com.google.android.material.tabs.TabLayout
-            android:id="@+id/search_tabs"
+            android:id="@+id/tl_search_tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -203,20 +201,18 @@
             app:tabSelectedTextColor="@color/accent"
             app:tabTextColor="@color/text_secondary" />
 
-        <!-- Search Results List -->
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/search_results_recycler"
+            android:id="@+id/rv_search_results"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="8dp"
             android:layout_weight="1"
+            android:layout_marginTop="8dp"
             android:paddingBottom="16dp" />
-
     </LinearLayout>
 
-    <!-- No Results State -->
+    <!-- No Results -->
     <LinearLayout
-        android:id="@+id/no_results_state"
+        android:id="@+id/section_no_results"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -225,6 +221,7 @@
         android:visibility="gone">
 
         <ImageView
+            android:id="@+id/iv_no_results"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:alpha="0.5"
@@ -232,6 +229,7 @@
             app:tint="@color/text_secondary" />
 
         <TextView
+            android:id="@+id/tv_no_results_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -241,19 +239,18 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/no_results_subtitle"
+            android:id="@+id/tv_no_results_subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Try searching for something else"
             android:textColor="@color/text_tertiary"
             android:textSize="14sp" />
-
     </LinearLayout>
 
-    <!-- Loading State -->
+    <!-- Loading -->
     <LinearLayout
-        android:id="@+id/search_loading"
+        android:id="@+id/section_loading"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:gravity="center"
@@ -261,18 +258,19 @@
         android:visibility="gone">
 
         <ProgressBar
+            android:id="@+id/pb_search_loading"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:indeterminateTint="@color/accent" />
 
         <TextView
+            android:id="@+id/tv_loading_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Searching..."
             android:textColor="@color/text_secondary"
             android:textSize="14sp" />
-
     </LinearLayout>
 
 </LinearLayout>

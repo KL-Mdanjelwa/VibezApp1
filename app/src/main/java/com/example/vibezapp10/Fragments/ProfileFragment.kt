@@ -25,5 +25,30 @@ class ProfileFragment : Fragment() {
         view.findViewById<Button>(R.id.btn_edit_profile).setOnClickListener {
             startActivity(Intent(requireContext(), EditProfileActivity::class.java))
         }
+
+        view.findViewById<View>(R.id.subscription_card).setOnClickListener {
+            // Navigate to SubscriptionActivity or show subscription details
+        }
+
+        view.findViewById<View>(R.id.privacy_card).setOnClickListener {
+            // Navigate to PrivacySettingsActivity
+        }
+
+        view.findViewById<View>(R.id.storage_card).setOnClickListener {
+            // Show storage & data details
+        }
+
+        view.findViewById<View>(R.id.help_card).setOnClickListener {
+            // Navigate to HelpActivity
+        }
+
+        view.findViewById<View>(R.id.about_card).setOnClickListener {
+            // Show About dialog or activity
+        }
+
+        view.findViewById<View>(R.id.logout_card).setOnClickListener {
+            // Handle logout logic
+        }
     }
+
 }

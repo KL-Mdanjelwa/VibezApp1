@@ -7,17 +7,24 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.vibezapp10.Models.RecentActivity
+import com.example.vibezapp10.Models.RecentActivityAdapter
 import com.example.vibezapp10.PlaylistsActivity
 import com.example.vibezapp10.R
 
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class HomeFragment : Fragment() {
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
+    private lateinit var recentActivitiesRecycler: RecyclerView
+    private lateinit var recentActivitiesAdapter: RecentActivityAdapter
+    private val recentActivities = mutableListOf<RecentActivity>()
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
@@ -32,14 +39,31 @@ class HomeFragment : Fragment() {
         }
 
         shareBtn.setOnClickListener {
-            // Handle share
+            // TODO: Implement share logic
         }
 
-        setupRecyclerViews(view)
+        setupRecyclerView(view)
+        fetchRecentActivities()
     }
 
-    private fun setupRecyclerViews(view: View) {
-        val recentActivitiesRecycler = view.findViewById<RecyclerView>(R.id.recent_activities_recycler)
-        // Setup adapter and data
+    private fun setupRecyclerView(view: View) {
+        recentActivitiesRecycler = view.findViewById(R.id.recent_activities_recycler)
+        recentActivitiesAdapter = RecentActivityAdapter(recentActivities) { activity ->
+            // TODO: Handle item click
+        }
+        recentActivitiesRecycler.layoutManager = LinearLayoutManager(requireContext())
+        recentActivitiesRecycler.adapter = recentActivitiesAdapter
+    }
+
+    private fun fetchRecentActivities() {
+        // TODO: Replace with API call
+        val mockData = listOf(
+            RecentActivity("Downloaded 'Song A'", "Today"),
+            RecentActivity("Liked 'Song B'", "Yesterday"),
+            RecentActivity("Played 'Song C'", "2 days ago")
+        )
+        recentActivities.clear()
+        recentActivities.addAll(mockData)
+        recentActivitiesAdapter.notifyDataSetChanged()
     }
 }

@@ -6,7 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.vibezapp10.Data.Playlist
+import com.example.vibezapp10.Models.Playlist
+import com.example.vibezapp10.R
 
 class PlaylistAdapter(
     private val playlists: List<Playlist>,

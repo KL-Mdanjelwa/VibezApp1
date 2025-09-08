@@ -1,4 +1,4 @@
-package com.example.vibezapp10.Data
+package com.example.vibezapp10.Models
 
 data class Playlist(
     val id: String,
