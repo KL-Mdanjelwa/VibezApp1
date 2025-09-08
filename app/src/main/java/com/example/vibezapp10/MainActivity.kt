@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.nav_home -> loadFragment(HomeFragment())
                 R.id.nav_search -> loadFragment(SearchFragment())
-                R.id.nav_live -> loadFragment(LiveFragment())
                 R.id.nav_library -> loadFragment(LibraryFragment())
                 R.id.nav_profile -> loadFragment(ProfileFragment())
                 else -> false

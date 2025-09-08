@@ -1,5 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Primary Colors -->
+    <color name="primary">#000000</color>
+    <color name="primary_variant">#121212</color>
+    <color name="secondary">#FF6B35</color>
+    <color name="secondary_variant">#F7931E</color>
+
+    <!-- Accent Colors -->
+    <color name="accent">#FF6B35</color>
+    <color name="accent_light">#FF8A5B</color>
+    <color name="accent_dark">#E55A2B</color>
+
+    <!-- Background Colors -->
+    <color name="background_primary">#F5F5F5</color>
+    <color name="background_secondary">#C4C4C4</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_secondary">#F0F0F0</color>
+    <color name="surface_variant">#E8E8E8</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#000000</color>
+    <color name="text_secondary">#666666</color>
+    <color name="text_tertiary">#999999</color>
+    <color name="text_hint">#CCCCCC</color>
+
+    <!-- White variations -->
+    <color name="white">#FFFFFF</color>
+    <color name="white_90">#E6FFFFFF</color>
+    <color name="white_70">#B3FFFFFF</color>
+    <color name="white_50">#80FFFFFF</color>
+    <color name="white_30">#4DFFFFFF</color>
+
+    <!-- Black variations -->
+    <color name="black">#000000</color>
+    <color name="black_90">#E6000000</color>
+    <color name="black_70">#B3000000</color>
+    <color name="black_50">#80000000</color>
+    <color name="black_30">#4D000000</color>
+    <color name="black_10">#1A000000</color>
+
+    <!-- Genre Card Colors -->
+    <color name="hip_hop_color">#FFD700</color>
+    <color name="afrobeat_color">#FF6B35</color>
+    <color name="gospel_color">#FFD700</color>
+
+    <!-- Live Stream Card Colors -->
+    <color name="live_card_1">#FF6B35</color>
+    <color name="live_card_2">#C147E9</color>
+
+    <!-- Status Colors -->
+    <color name="red">#FF3B30</color>
+    <color name="green">#34C759</color>
+    <color name="blue">#007AFF</color>
+    <color name="orange">#FF9500</color>
+    <color name="purple">#AF52DE</color>
+    <color name="pink">#FF2D92</color>
+    <color name="yellow">#FFCC00</color>
+
+    <!-- System Colors -->
+    <color name="ripple_color">#20000000</color>
+    <color name="divider">#E0E0E0</color>
+    <color name="error">#FF3B30</color>
+    <color name="success">#34C759</color>
+    <color name="warning">#FF9500</color>
+
+    <!-- Player Colors -->
+    <color name="player_background_start">#F7931E</color>
+    <color name="player_background_end">#FF6B35</color>
+    <color name="player_overlay_start">#00000000</color>
+    <color name="player_overlay_end">#80000000</color>
+
+    <!-- Bottom Navigation Colors -->
+    <color name="bottom_nav_selected">#FF6B35</color>
+    <color name="bottom_nav_unselected">#666666</color>
+
+    <!-- Input Field Colors -->
+    <color name="input_background">#F8F8F8</color>
+    <color name="input_border">#E0E0E0</color>
+    <color name="input_border_focused">#FF6B35</color>
+
+    <!-- Card Colors -->
+    <color name="card_background">#FFFFFF</color>
+    <color name="card_shadow">#10000000</color>
+
+    <!-- Transparent Colors -->
+    <color name="transparent">#00000000</color>
+    <color name="semi_transparent">#80000000</color>
+    <color name="overlay_light">#40FFFFFF</color>
+    <color name="overlay_dark">#40000000</color>
 </resources>
