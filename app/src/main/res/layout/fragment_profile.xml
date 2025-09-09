@@ -349,7 +349,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_weight="1"
-                        android:text="Storage & Data"
+                        android:text="Storage and Data"
                         android:textColor="@color/text_primary"
                         android:textSize="16sp" />
 
@@ -416,7 +416,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_weight="1"
-                        android:text="Help & Support"
+                        android:text="Help and Support"
                         android:textColor="@color/text_primary"
                         android:textSize="16sp" />
 
