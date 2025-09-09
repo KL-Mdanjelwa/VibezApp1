@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Search -->
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_search"
+        android:title="Search"
+        android:showAsAction="ifRoom" />
+
+    <!-- Notifications -->
+    <item
+        android:id="@+id/action_notifications"
+        android:icon="@drawable/ic_notifications"
+        android:title="Notifications"
+        android:showAsAction="ifRoom" />
+
+    <!-- Settings -->
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="Settings"
+        android:showAsAction="never" />
+</menu>

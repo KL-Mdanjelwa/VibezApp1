@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.SearchView
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,8 +13,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.vibezapp10.Adapters.GenreAdapter
 import com.example.vibezapp10.Adapters.RecentSearchAdapter
 import com.example.vibezapp10.Adapters.SongAdapter
-import com.example.vibezapp10.Models.Genre
+import com.example.vibezapp10.api.ApiPlaceholder
 import com.example.vibezapp10.Models.Song
+import com.example.vibezapp10.Models.Genre
 import com.example.vibezapp10.R
 
 class SearchFragment : Fragment() {
@@ -34,10 +35,10 @@ class SearchFragment : Fragment() {
 
     private val recentSearches = mutableListOf<String>()
     private val genres = listOf(
-        Genre("Pop", R.drawable.ic_genre_pop),
-        Genre("Hip Hop", R.drawable.ic_genre_hiphop),
-        Genre("Rock", R.drawable.ic_genre_rock),
-        Genre("Jazz", R.drawable.ic_genre_jazz)
+        Genre("1", "Pop", R.drawable.ic_genre_pop),
+        Genre("2", "Hip Hop", R.drawable.ic_genre_hiphop),
+        Genre("3", "Rock", R.drawable.ic_genre_rock),
+        Genre("4", "Jazz", R.drawable.ic_genre_jazz)
     )
 
     override fun onCreateView(
@@ -51,15 +52,15 @@ class SearchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Initialize views
-        searchView = view.findViewById(R.id.search_view)
-        searchResultsRecycler = view.findViewById(R.id.search_results_recycler)
-        genresRecycler = view.findViewById(R.id.genres_grid)
-        recentSearchesRecycler = view.findViewById(R.id.recent_searches_recycler)
-        loadingSection = view.findViewById(R.id.search_loading)
-        noResultsSection = view.findViewById(R.id.no_results_state)
-        searchCategoriesSection = view.findViewById(R.id.search_categories_section)
-        recentSearchesSection = view.findViewById(R.id.recent_searches_section)
+        // Map IDs from the new XML
+        searchView = view.findViewById(R.id.sv_search)
+        searchResultsRecycler = view.findViewById(R.id.rv_search_results)
+        genresRecycler = view.findViewById(R.id.rv_genres)
+        recentSearchesRecycler = view.findViewById(R.id.rv_recent_searches)
+        loadingSection = view.findViewById(R.id.section_loading)
+        noResultsSection = view.findViewById(R.id.section_no_results)
+        searchCategoriesSection = view.findViewById(R.id.section_browse_categories)
+        recentSearchesSection = view.findViewById(R.id.section_recent_searches)
         btnClearRecent = view.findViewById(R.id.btn_clear_recent)
 
         // Setup RecyclerViews

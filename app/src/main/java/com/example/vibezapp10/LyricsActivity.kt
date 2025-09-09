@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.vibezapp10.R
+import com.example.vibezapp10.api.LyricsApi
 
 class LyricsActivity : AppCompatActivity() {
 

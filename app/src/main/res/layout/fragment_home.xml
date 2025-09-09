@@ -234,6 +234,15 @@
             android:textColor="@color/text_secondary"
             android:textSize="14sp" />
 
+        <!-- RecyclerView for Recent Activities -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recent_activities_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:nestedScrollingEnabled="false"
+            android:clipToPadding="false"/>
+
         <!-- Recent Activities List -->
         <LinearLayout
             android:layout_width="match_parent"
@@ -382,7 +391,7 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/ic_streaming"
+                        android:src="@drawable/ic_live"
                         app:tint="@color/accent" />
 
                     <TextView

@@ -119,7 +119,7 @@ class ArtistProfileActivity : AppCompatActivity() {
 
         val albumAdapter = AlbumAdapter(albums) { album ->
             // TODO: Create AlbumDetailActivity (placeholder navigation)
-            val i = Intent(this, AlbumDetailActivity::class.java).apply {
+            val i = Intent(this, PlaylistsActivity::class.java).apply {
                 putExtra("album_id", album.id)
                 putExtra("album_title", album.title)
                 putExtra("album_cover", album.coverUrl)

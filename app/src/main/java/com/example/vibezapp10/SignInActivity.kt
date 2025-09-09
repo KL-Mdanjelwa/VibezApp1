@@ -20,7 +20,7 @@ class SignInActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.btn_sign_up).setOnClickListener {
-            startActivity(Intent(this, SignUpActivity::class.java))
+
         }
 
         findViewById<Button>(R.id.btn_apple_signin).setOnClickListener {

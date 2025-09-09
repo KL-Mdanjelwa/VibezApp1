@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.vibezapp10.Activities.LyricsActivity
 
 class MusicPlayerActivity : AppCompatActivity() {
 
@@ -51,7 +52,7 @@ class MusicPlayerActivity : AppCompatActivity() {
         shuffleBtn.setOnClickListener {
             isShuffle = !isShuffle
             shuffleBtn.setColorFilter(
-                if (isShuffle) getColor(R.color.red_main) else getColor(R.color.white)
+                if (isShuffle) getColor(R.color.red) else getColor(R.color.white)
             )
             Toast.makeText(this, if (isShuffle) "Shuffle On" else "Shuffle Off", Toast.LENGTH_SHORT).show()
         }
@@ -60,7 +61,7 @@ class MusicPlayerActivity : AppCompatActivity() {
         repeatBtn.setOnClickListener {
             isRepeat = !isRepeat
             repeatBtn.setColorFilter(
-                if (isRepeat) getColor(R.color.red_main) else getColor(R.color.white)
+                if (isRepeat) getColor(R.color.red) else getColor(R.color.white)
             )
             Toast.makeText(this, if (isRepeat) "Repeat On" else "Repeat Off", Toast.LENGTH_SHORT).show()
         }
@@ -69,7 +70,7 @@ class MusicPlayerActivity : AppCompatActivity() {
         favoriteBtn.setOnClickListener {
             isFavorite = !isFavorite
             favoriteBtn.setImageResource(
-                if (isFavorite) R.drawable.ic_favorite_filled else R.drawable.ic_favorite_border
+                if (isFavorite) R.drawable.ic_favorite_filled else R.drawable.ic_favorite_outline
             )
             Toast.makeText(this, if (isFavorite) "Added to Favorites" else "Removed from Favorites", Toast.LENGTH_SHORT).show()
             // TODO: Save favorite to Firebase

@@ -23,7 +23,7 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<Button>(R.id.btn_edit_profile).setOnClickListener {
-            startActivity(Intent(requireContext(), EditProfileActivity::class.java))
+
         }
 
         view.findViewById<View>(R.id.subscription_card).setOnClickListener {

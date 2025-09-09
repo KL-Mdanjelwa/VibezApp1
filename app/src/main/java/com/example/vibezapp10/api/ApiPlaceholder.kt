@@ -4,11 +4,43 @@ import com.example.vibezapp10.Models.*
 
 object ApiPlaceholder {
 
-    private val demoSongs = listOf(
-        Song("s1", "Water", "Tyla", coverUrl = null),
-        Song("s2", "Getting Late", "Tyla", coverUrl = null),
-        Song("s3", "Truth or Dare", "Tyla", coverUrl = null),
-        Song("s4", "To Last", "Tyla", coverUrl = null),
+    val demoSongs = listOf(
+        Song(
+            id = "s1",
+            title = "Water",
+            artist = "Tyla",
+            album = "Album 1",
+            duration = 180_000L, // duration in milliseconds (3 minutes)
+            coverUrl = null,
+            audioUrl = "https://example.com/audio/water.mp3"
+        ),
+        Song(
+            id = "s2",
+            title = "Getting Late",
+            artist = "Tyla",
+            album = "Album 2",
+            duration = 200_000L,
+            coverUrl = null,
+            audioUrl = "https://example.com/audio/getting_late.mp3"
+        ),
+        Song(
+            id = "s3",
+            title = "Truth or Dare",
+            artist = "Tyla",
+            album = "Album 3",
+            duration = 210_000L,
+            coverUrl = null,
+            audioUrl = "https://example.com/audio/truth_or_dare.mp3"
+        ),
+        Song(
+            id = "s4",
+            title = "To Last",
+            artist = "Tyla",
+            album = "Album 4",
+            duration = 190_000L,
+            coverUrl = null,
+            audioUrl = "https://example.com/audio/to_last.mp3"
+        )
     )
 
     private val demoAlbums = listOf(
@@ -28,6 +60,14 @@ object ApiPlaceholder {
         )
 
     fun getArtistPopularSongs(artistId: String): List<Song> = demoSongs
+
+    fun searchSongs(query: String): List<Song> {
+        return demoSongs.filter { song ->
+            song.title.contains(query, ignoreCase = true) ||
+                    song.artist.contains(query, ignoreCase = true) ||
+                    song.album.contains(query, ignoreCase = true)
+        }
+    }
 
     fun getArtistAlbums(artistId: String): List<Album> = demoAlbums
 

@@ -2,57 +2,64 @@ package com.example.vibezapp10
 
 import android.os.Bundle
 import android.view.View
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.vibezapp10.Adapters.FavoritesAdapter
+import com.example.vibezapp10.Models.Playlist
+import com.example.vibezapp10.Models.Song
+import com.example.vibezapp10.databinding.ActivityFavoritesBinding
 
 class FavoritesActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityFavoritesBinding
     private val favoriteSongs = mutableListOf<Song>()
     private lateinit var adapter: FavoritesAdapter
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var emptyState: View
+
+    // Example source of playlists
+    private val allPlaylists = mutableListOf<Playlist>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_favorites)
+        binding = ActivityFavoritesBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        recyclerView = findViewById(R.id.favorites_recycler)
-        emptyState = findViewById(R.id.empty_state)
-
-        adapter = FavoritesAdapter(favoriteSongs,
+        adapter = FavoritesAdapter(
+            favoriteSongs,
             onSongClick = { song ->
-                // Play song or open player
+                // TODO: Play song or open player
             },
             onFavoriteClick = { song ->
-                // Remove from favorites
-                favoriteSongs.remove(song)
-                adapter.notifyDataSetChanged()
-                toggleEmptyState()
-            })
+                // Unfavorite the song
+                song.isFavorite = false
+                refreshFavorites()
+            }
+        )
 
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = adapter
+        binding.favoritesRecycler.layoutManager = LinearLayoutManager(this)
+        binding.favoritesRecycler.adapter = adapter
 
         loadFavorites()
     }
 
     private fun loadFavorites() {
-        // Placeholder: Add dummy favorites
-        favoriteSongs.addAll(listOf(
-            Song("1", "Water", "Tyla", "placeholder_album"),
-            Song("2", "Shape of You", "Ed Sheeran", "placeholder_album", localPath = "/offline/song2.mp3")
-        ))
+        favoriteSongs.clear()
+        // Collect all songs marked as favorite from all playlists
+        allPlaylists.forEach { playlist ->
+            favoriteSongs.addAll(playlist.songs.filter { it.isFavorite })
+        }
+
         adapter.notifyDataSetChanged()
         toggleEmptyState()
     }
 
     private fun toggleEmptyState() {
-        emptyState.visibility = if (favoriteSongs.isEmpty()) View.VISIBLE else View.GONE
-        recyclerView.visibility = if (favoriteSongs.isEmpty()) View.GONE else View.VISIBLE
+        val isEmpty = favoriteSongs.isEmpty()
+        binding.emptyState.visibility = if (isEmpty) View.VISIBLE else View.GONE
+        binding.favoritesRecycler.visibility = if (isEmpty) View.GONE else View.VISIBLE
+    }
+
+    // Call this to refresh favorites whenever playlists or songs change
+    fun refreshFavorites() {
+        loadFavorites()
     }
 }

@@ -40,7 +40,7 @@ class SongAdapter(
 
         // Load album image using Glide
         Glide.with(holder.itemView.context)
-            .load(song.imageUrl)
+            .load(song.coverUrl)
             .placeholder(R.drawable.placeholder_album)
             .into(holder.albumImage)
 
